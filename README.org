@@ -1,0 +1,14 @@
+* og.el
+This package provides a simple function to get Open Graph data in a web page.
+
+** Install
+Put ~og.el~ in your ~load-path~.
+
+** Usage
+#+begin_src elisp
+  (let* ((og (og-get "https://orgmode.org"))
+         (title (gethash "og:title" og))
+         (description (gethash "og:description" og)))
+    (message "This web page is %s; %s"
+             title description))
+#+end_src
